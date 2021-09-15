@@ -8,15 +8,20 @@ class Display(tk.Tk):
         self.setup_frame()
         self.init_frame()
         
+
     def setup_frame(self):
         self.rowconfigure(0, weight = 1)
         self.rowconfigure(1, weight = 6)
         self.columnconfigure(0, weight = 1)
-        self.columnconfigure(1, weight = 1)
+        # self.columnconfigure(1, weight = 1)
+
 
     def init_frame(self):
         expression = self.create_expression_frame(self)
         expression.grid(row= 0, column = 0, sticky= 'nsew')
+        button = self.create_button_frame(self)
+        button.grid(row= 1, column = 0, sticky= 'nsew')
+
 
     def create_expression_frame(self, parent):
         expression_frame = ttk.Frame(parent)
@@ -31,6 +36,22 @@ class Display(tk.Tk):
         result_label.grid(row= 1, column= 0, sticky = 'e')
 
         return expression_frame
+
+
+    def create_button_frame(self, parent):
+        button_frame = ttk.Frame(parent)
+        rows = 5
+        cols = 4
+
+        for r in range(rows):
+            button_frame.rowconfigure(r, weight = 1)
+        for c in range(cols):
+            button_frame.rowconfigure(c, weight = 1)
+
+
+        
+        return button_frame
+
 
     def init_display(self):
         self.mainloop()
