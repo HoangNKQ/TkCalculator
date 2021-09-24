@@ -37,13 +37,13 @@ class View(tk.Tk):
     def create_expression_frame(self, parent):
         expression_frame = ttk.Frame(parent)
         expression_frame.rowconfigure(0, weight = 1)
-        expression_frame.rowconfigure(1, weight = 4)
+        expression_frame.rowconfigure(1, weight = 3)
         expression_frame.columnconfigure(0, weight = 1)
 
-        self.expression_label = ttk.Label(expression_frame, text= '')
+        self.expression_label = ttk.Label(expression_frame, text= '', font=('Arial', 10))
         self.expression_label.grid(row= 0, column= 0, sticky= 'e', padx= 5, pady= 5)
 
-        self.main_label = ttk.Label(expression_frame, text= "0", font=('Arial', 30))
+        self.main_label = ttk.Label(expression_frame, text= "0", font=('Arial', 35))
         self.main_label.grid(row= 1, column= 0, sticky = 'e', padx= 5, pady= 5)
 
         return expression_frame

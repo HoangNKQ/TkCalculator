@@ -23,7 +23,6 @@ class Model:
                 return
         self.new_value_text += input_button
         self.store_expression(input_button)
-        self.new_expression = False
         self.new_value = float(self.new_value_text)
 
         return self.new_value_text 
