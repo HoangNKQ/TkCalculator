@@ -9,16 +9,24 @@ class Controller:
 
 
     def start_app(self):
+        '''
+        Khoi dong app tu Controller 
+        '''
         self.view.init_display()
 
 
     def update_expression(self):
+        '''
+        Cap nhat hien thi cong thuc trong view.expression
+        '''
         self.view.expression = self.model.expression_text
         self.view.insert_expression(self.view.expression)
 
 
     def button_trigger(self, button_name):
-            
+        '''
+        Xu ly cac chuc nang cua nut bam
+        '''    
         if button_name in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.']:
             self.view.main_entry = self.model.store_input(button_name, self.view.buttons[button_name])
             self.view.insert_main_entry(self.view.main_entry)
@@ -48,7 +56,7 @@ class Controller:
             self.view.insert_main_entry(self.view.main_entry)
             self.update_expression()
 
-        
+
         if button_name == '=':
             self.view.main_entry = self.model.equal()
             self.view.insert_main_entry(self.view.main_entry)
@@ -67,7 +75,7 @@ class Controller:
 
 
         if button_name == 'root2':
-            self.view.main_entry = self.model.square_root()
+            self.view.main_entry = self.model.square_root(self.view.buttons[button_name])
             self.view.insert_main_entry(self.view.main_entry)
             self.update_expression()
 
@@ -85,7 +93,7 @@ class Controller:
 
 
         if button_name == 'pi':
-            self.view.main_entry = self.model.pi_number()
+            self.view.main_entry = self.model.pi_number(self.view.buttons[button_name])
             self.view.insert_main_entry(self.view.main_entry)
             self.update_expression()
 
@@ -94,7 +102,8 @@ class Controller:
             self.model.clear()
             self.view.main_entry = self.model.new_value_text
             self.view.main_label['text'] = self.view.main_entry
-
+            self.view.expression = self.model.expression_text
+            self.view.expression_label['text'] = self.view.expression
         
 
 def main():

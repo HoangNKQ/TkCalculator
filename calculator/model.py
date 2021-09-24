@@ -12,6 +12,7 @@ class Model:
         self.expression_text = ''
         self.new_expression = True
 
+
     def store_input(self, input_button, input_symbol):
         '''
         Luu gia tri so va dau cham vao bien self.current_value
@@ -94,12 +95,12 @@ class Model:
         self.store_expression(str(self.new_value))
         return self.new_value
 
-    def pi_number(self):
+    def pi_number(self, symbol):
         self.new_value_text = ''
         self.two_operand = False
         self.new_value = math.pi
         self.new_expression = True
-        self.store_expression(str(self.new_value))
+        self.store_expression(symbol)
         return self.new_value
 
     def square(self):
@@ -110,12 +111,12 @@ class Model:
         self.store_expression(str(self.new_value))
         return self.new_value
 
-    def square_root(self):
+    def square_root(self, symbol):
         self.new_value_text = ''
         self.two_operand = False
         self.new_value = math.sqrt(self.new_value)
         self.new_expression = True
-        self.store_expression(str(self.new_value))
+        self.store_expression(symbol + str(self.new_value))
         return self.new_value
 
     def fraction(self):
