@@ -1,5 +1,4 @@
 import math
-from tkinter.constants import TRUE
 
 
 class Model:
@@ -45,6 +44,7 @@ class Model:
             self.result_value = self.calculate_result_value()
             self.two_operand = False
 
+        print(self.expression_text + '=' + str(self.result_value))
         self.new_expression = True
         self.new_value = self.result_value
 
@@ -56,16 +56,17 @@ class Model:
         # print (self.current_value)
         if self.two_operand == False:
             self.result_value = self.new_value
-            self.expression_text = ''
-            self.store_expression(str(self.result_value) + operator_symbol)
+            self.expression_text = str(self.result_value) + operator_symbol
+            self.new_expression = False
             self.two_operand = True
         else:
             self.result_value = self.calculate_result_value()
-            self.expression_text = ''
-            self.store_expression(str(self.result_value) + operator_symbol)
+            print(self.expression_text + '=' + str(self.result_value))
+            self.expression_text = str(self.result_value) + operator_symbol
+            self.new_expression = False
 
         self.operator_name = operator_name
-        self.new_value = self.result_value
+        #self.new_value = self.result_value
         
         return self.result_value
 
