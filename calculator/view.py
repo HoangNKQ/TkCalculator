@@ -127,8 +127,7 @@ class View(tk.Tk):
 
 
 def main():
-    gui = View()
-    gui.init_display()
+    pass
 
 if __name__ == '__main__':
     main()
