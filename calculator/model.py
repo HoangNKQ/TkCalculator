@@ -86,6 +86,13 @@ class Model:
 
         return self.result_value
 
+    def erase(self):
+        self.new_value_text = ''
+        self.two_operand = False
+        self.new_value = -1 * self.new_value
+        self.new_expression = True
+        self.store_expression(str(self.new_value))
+        return self.new_value
 
     def inverse(self):
         self.new_value_text = ''

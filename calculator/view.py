@@ -121,7 +121,6 @@ class View(tk.Tk):
         return button_frame
 
 
-
     def init_display(self):
         self.mainloop()
 

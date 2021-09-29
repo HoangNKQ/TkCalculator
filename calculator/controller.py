@@ -57,6 +57,10 @@ class Controller:
             self.update_expression()
 
 
+        if button_name == 'erase_left':
+            pass
+
+
         if button_name == '=':
             self.view.main_entry = self.model.equal()
             self.view.insert_main_entry(self.view.main_entry)
